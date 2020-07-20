@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Neumorphism Calculator UI</title>
+
+<style>
+*
+{
+ margin: 0;
+ padding: 0;
+ box-sizing: content-box;
+    
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #E8F5FC;
+
+  color: #699AB6;
+}
+
+.calculator {
+    zoom: 1.3;
+  padding: 32px 24px;
+  width: 240px;
+  background-color: #E8F5FC;
+  box-shadow: 6px 6px 10px rgba(164, 216, 243, 0.5), -6px -6px 10px rgba(255, 255, 255, 0.6);
+  border-radius: 16px;
+}
+.calculator__screen {
+  text-align: right;
+  padding: 12px 8px;
+  border-radius: 6px;
+  background-color: #e3f3fb;
+  box-shadow: inset 6px 6px 10px rgba(164, 216, 243, 0.5), inset -6px -6px 10px rgba(255, 255, 255, 0.6);
+  margin-bottom: 24px;
+}
+.calculator__operation {
+  margin: 0 0 8px 0;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 2px;
+}
+.calculator__result {
+  font-size: 24px;
+  margin: 0;
+  font-weight: 600;
+  color: #6B8AFA;
+  letter-spacing: 2px;
+}
+.calculator__buttons {
+  display: grid;
+  grid-gap: 16px 12px;
+  grid-template-columns: repeat(4, 44px);
+  grid-template-rows: repeat(5, 44px);
+  justify-content: center;
+}
+.calculator__buttons .btn {
+  background-color: #E8F5FC;
+  box-shadow: 6px 6px 10px rgba(164, 216, 243, 0.5), -6px -6px 10px rgba(255, 255, 255, 0.6);
+  border: none;
+  border-radius: 100%;
+  cursor: pointer;
+  user-select: none;
+  outline: none;
+  color: #699AB6;
+  font-weight: 500;
+}
+.calculator__buttons .btn:hover {
+  background-color: #dff1fb;
+}
+.calculator__buttons .btn:active:focus {
+  box-shadow: inset 6px 6px 10px rgba(164, 216, 243, 0.5), inset -6px -6px 10px rgba(255, 255, 255, 0.6);
+}
+.calculator__buttons .btn:focus {
+  box-shadow: 6px 6px 10px rgba(164, 216, 243, 0.5), -6px -6px 10px rgba(255, 255, 255, 0.6), inset 6px 6px 10px rgba(164, 216, 243, 0.5), inset -6px -6px 10px rgba(255, 255, 255, 0.6);
+}
+.calculator__buttons .btn.equal {
+  background-color: #6B8AFA;
+  color: white;
+  box-shadow: 3px 11px 25px rgba(48, 91, 248, 0.6), -6px -6px 10px rgba(255, 255, 255, 0.6), inset -3px -3px 14px rgba(255, 255, 255, 0.2), inset 8px 8px 14px rgba(48, 91, 248, 0.5);
+  grid-row-start: span 2;
+  grid-column-start: 4;
+  border-radius: 50px;
+}
+.calculator__buttons .btn.equal:hover {
+  background-color: #5277f9;
+}
+.calculator__buttons .btn.equal:active:focus, .calculator__buttons .btn.equal:focus {
+  box-shadow: 3px 11px 25px rgba(8, 60, 247, 0.6), -6px -6px 10px rgba(255, 255, 255, 0.9), inset 3px 11px 15px rgba(8, 60, 247, 0.5), inset -6px -6px 8px rgba(206, 216, 253, 0.5);
+}
+.calculator__buttons .btn.highlight {
+  color: #6B8AFA;
+}
+
+</style>    
+</head>
+<body>
+<div class="calculator">
+   <div class="calculator__screen">
+      <h6 class="calculator__operation">1258 + 963</h6>
+      <h5 class="calculator__result">2194</h5>
+   </div>
+   <div class="calculator__buttons">
+      <button class="btn highlight">C</button>
+      <button class="btn highlight">÷</button>
+      <button class="btn highlight">x</button>
+      <button class="btn">
+         <svg width="20" height="12" viewBox="0 0 20 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M6.141 1.2L1.67588 6L6.141 10.8H18.75V1.2H6.141ZM5.5814 12L0 6L5.5814 0H20V12H5.5814Z" fill="#6B8AFA"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M9.17574 3.17574C9.41005 2.94142 9.78995 2.94142 10.0243 3.17574L14.8243 7.97574C15.0586 8.21005 15.0586 8.58995 14.8243 8.82426C14.5899 9.05858 14.2101 9.05858 13.9757 8.82426L9.17574 4.02426C8.94142 3.78995 8.94142 3.41005 9.17574 3.17574Z" fill="#6B8AFA"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M14.8243 3.17574C14.5899 2.94142 14.2101 2.94142 13.9757 3.17574L9.17574 7.97574C8.94142 8.21005 8.94142 8.58995 9.17574 8.82426C9.41005 9.05858 9.78995 9.05858 10.0243 8.82426L14.8243 4.02426C15.0586 3.78995 15.0586 3.41005 14.8243 3.17574Z" fill="#6B8AFA"/>
+         </svg>
+      </button>
+      <button class="btn">7</button>
+      <button class="btn">8</button>
+      <button class="btn">9</button>
+      <button class="btn highlight">-</button>
+      <button class="btn">4</button>
+      <button class="btn">5</button>
+      <button class="btn">6</button>
+      <button class="btn highlight">+</button>
+      <button class="btn">1</button>
+      <button class="btn">2</button>
+      <button class="btn">3</button>
+      <button class="btn equal">=</button>
+      <button class="btn">%</button>
+      <button class="btn">0</button>
+      <button class="btn">.</button>
+   </div>
+</div>    
+</body>
+</html>
